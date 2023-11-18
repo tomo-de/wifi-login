@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "wifi-login"
+version = "0.1.0"
+description = ""
+authors = ["tomo-de <71959137+tomo-de@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11.6"
+keyring = "^24.3.0"
+requests = "^2.31.0"
+macwifi = "^0.0.5"
+rumps = "^0.4.0"
+py2app = "^0.28.6"
+flet = "^0.12.2"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

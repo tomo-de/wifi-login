@@ -13,7 +13,7 @@ OPTIONS = {
     'plist': {
         'LSUIElement': True,
     },
-    'packages': ['rumps', 'flet'],
+    'packages': ['rumps', 'flet', 'ssl', 'macwifi', 'requests', 'urllib3', 'keyring', 'data', 'main'],
 }
 
 setup(

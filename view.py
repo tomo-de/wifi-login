@@ -83,5 +83,5 @@ class App(rumps.App):
         main.login()
 
 if __name__ == "__main__":
-    app = App("wifi-login").run()
+    app = App("wifi-login", icon="assets/key.png", quit_button="終了").run()
     app.run()

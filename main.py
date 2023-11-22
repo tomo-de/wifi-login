@@ -2,7 +2,6 @@
 import ssl
 import macwifi
 import requests
-import requests
 import urllib3
 import data
 

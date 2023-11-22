@@ -1,3 +1,4 @@
+import time
 import keyring
 
 class preference:
@@ -14,6 +15,7 @@ class preference:
             user_id (str): 設定するuser id
         """
         keyring.set_password("wifi-login", "user_id", user_id)
+        self.update()
     
     def set_password(self, password: str) -> None:
         """passwordを設定する
@@ -22,6 +24,7 @@ class preference:
             password (str): 設定するpassword
         """
         keyring.set_password("wifi-login", "password", password)
+        self.update()
     
     def set_url(self, url: str) -> None:
         """urlを設定する
@@ -30,6 +33,7 @@ class preference:
             url (str): 設定するurl
         """
         keyring.set_password("wifi-login", "url", url)
+        self.update()
     
     def set_ssid_list(self, ssid_list: str) -> None:
         """ssid_listを設定する
@@ -38,6 +42,7 @@ class preference:
             ssid_list (str): 設定するssid_list
         """
         keyring.set_password("wifi-login", "ssid_list", ssid_list)
+        self.update()
     
     def update(self) -> None:
         """keyringに保存された各値を読み込む関数

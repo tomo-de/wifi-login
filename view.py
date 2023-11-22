@@ -34,26 +34,29 @@ def config_page(page: ft.Page):
                 # uid
                 ft.Row(
                     [
-                        ft.Text(value="ログインID"),
+                        ft.Container(content=ft.Text(
+                            value="ログインID"), width=100),
                         uid
                     ]
                 ),
                 # pwd
                 ft.Row(
                     [
-                        ft.Text(value="パスワード"),
+                        ft.Container(content=ft.Text(
+                            value="パスワード"), width=100),
                         pwd
                     ]
                 ),
                 ft.Row(
                     [
-                        ft.Text(value="url"),
+                        ft.Container(content=ft.Text(value="url"), width=100),
                         url
                     ]
                 ),
                 ft.Row(
                     [
-                        ft.Text(value="ssidのリスト"),
+                        ft.Container(content=ft.Text(
+                            value="ssidのリスト"), width=100),
                         ssid_list
                     ]
                 ),

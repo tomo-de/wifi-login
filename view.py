@@ -77,9 +77,11 @@ class App(rumps.App):
     @rumps.clicked("ログイン")
     def login(self, _):
         main.login()
+    
+    @rumps.timer(15)
+    def check_login(self, _):
+        main.login()
 
 if __name__ == "__main__":
     app = App("wifi-login").run()
-    app_timer = rumps.Timer(main.login(), 5)
-    app.start()
     app.run()

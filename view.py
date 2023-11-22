@@ -71,6 +71,7 @@ class App(rumps.App):
     def config(self, _):
         ft.app(target=config_page)
 
+    @rumps.clicked("ログイン")
     def login(self, _):
         main.login()
 

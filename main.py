@@ -12,7 +12,7 @@ def login() -> None:
     now_wifi_ssid = macwifi.get_ssid()
     # 登録リストの取得
     preference = data.preference()
-    wifi_list = preference.set_ssid_list
+    wifi_list = preference.ssid_list
 
     if now_wifi_ssid not in wifi_list:
         # 切り替えたwifiが登録されているか されていなければ処理を終了

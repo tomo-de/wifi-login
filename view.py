@@ -1,7 +1,7 @@
 import rumps
 import flet as ft
 import data
-
+import main
 
 def config_page(page: ft.Page):
     # add/update controls on Page
@@ -71,11 +71,11 @@ class App(rumps.App):
     def config(self, _):
         ft.app(target=config_page)
 
-    def login(self, sender):
-        pass
+    def login(self, _):
+        main.login()
 
 if __name__ == "__main__":
     app = App("wifi-login").run()
-    app_timer = rumps.Timer(app.login(), 60)
+    app_timer = rumps.Timer(main.login(), 5)
     app.start()
     app.run()

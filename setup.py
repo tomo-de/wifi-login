@@ -8,10 +8,13 @@ Usage:
 from setuptools import setup
 
 APP = ['view.py']
+APP_NAME = "wifi-login"
 DATA_FILES = ["assets"]
 OPTIONS = {
     'plist': {
         'LSUIElement': True,
+        'CFBundleName': APP_NAME,
+        'CFBundleDisplayName': APP_NAME,
     },
     'packages': ['rumps', 'flet', 'ssl', 'macwifi', 'requests', 'urllib3', 'keyring', 'data', 'main'],
     'iconfile': 'assets/AppIcon.icns',

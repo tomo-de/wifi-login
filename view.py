@@ -6,19 +6,22 @@ import main
 def config_page(page: ft.Page):
     # add/update controls on Page
     page.title = "設定"
-    page.window_width = 600
-    page.window_height = 400
+    page.window_width = 707
+    page.window_height = 500
+    # page.window_resizable = False
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
+    text_width = 100
+    text_field_width = 400
     d = data.preference()
     uid = ft.TextField(
-        value=d.user_id, text_align=ft.TextAlign.RIGHT, width=300)
+        value=d.user_id, width=text_field_width)
     pwd = ft.TextField(
-        value=d.password, text_align=ft.TextAlign.RIGHT, width=300, password=True, can_reveal_password=True)
+        value=d.password, width=text_field_width, password=True, can_reveal_password=True)
     url = ft.TextField(
-        value=d.url, text_align=ft.TextAlign.RIGHT, width=300, hint_text="https://example.com/")
+        value=d.url, width=text_field_width, hint_text="https://example.com/")
     ssid_list = ft.TextField(
-        value=",".join(d.ssid_list), text_align=ft.TextAlign.RIGHT, width=300, hint_text="xxx,yyy,zzz")
+        value=",".join(d.ssid_list), width=text_field_width, hint_text="xxx,yyy,zzz")
     
     def handle_click_apply_button(e):
         d = data.preference()
@@ -29,43 +32,58 @@ def config_page(page: ft.Page):
         page.update()
 
     page.add(
-        ft.Column(
+        ft.Container(
+            padding=10,
+            content=ft.Column(
             [
                 # uid
                 ft.Row(
                     [
                         ft.Container(content=ft.Text(
-                            value="ログインID"), width=100),
-                        uid
-                    ]
+                            value="ログインID"), width=text_width),
+                        uid,
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
                 ),
                 # pwd
                 ft.Row(
                     [
                         ft.Container(content=ft.Text(
-                            value="パスワード"), width=100),
+                            value="パスワード"), width=text_width),
                         pwd
-                    ]
-                ),
-                ft.Row(
-                    [
-                        ft.Container(content=ft.Text(value="url"), width=100),
-                        url
-                    ]
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
                 ),
                 ft.Row(
                     [
                         ft.Container(content=ft.Text(
-                            value="ssidのリスト"), width=100),
-                        ssid_list
-                    ]
+                            value="url"), width=text_width),
+                        url
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
                 ),
-                ft.Container(
-                    alignment=ft.alignment.center_right,
-                    content=ft.FilledButton(text="適用", on_click=handle_click_apply_button)
-                )
+                ft.Row(
+                    [
+                        ft.Container(content=ft.Text(
+                            value="ssidのリスト"), width=text_width),
+                        ssid_list
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                ),
+                ft.Row(
+                    [
+                        ft.Container(
+                            width=text_width+text_field_width,
+                            alignment=ft.alignment.center_right,
+                            content=ft.FilledButton(
+                                text="適用", on_click=handle_click_apply_button)
+                        )
+                    ],
+                    alignment=ft.MainAxisAlignment.CENTER,
+                ),
                 
             ]
+        )
         )
     )
 

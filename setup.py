@@ -8,7 +8,7 @@ Usage:
 from setuptools import setup
 
 APP = ['view.py']
-DATA_FILES = []
+DATA_FILES = ["assets"]
 OPTIONS = {
     'plist': {
         'LSUIElement': True,

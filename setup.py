@@ -14,6 +14,7 @@ OPTIONS = {
         'LSUIElement': True,
     },
     'packages': ['rumps', 'flet', 'ssl', 'macwifi', 'requests', 'urllib3', 'keyring', 'data', 'main'],
+    'iconfile': 'assets/AppIcon.icns',
 }
 
 setup(

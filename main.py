@@ -20,7 +20,7 @@ def login() -> None:
         # インターネットに接続されていれば処理を終了
         return
     # ページにリクエストを送る
-    request_login(preference.set_user_id, preference.password, preference.url)
+    request_login(preference.user_id, preference.password, preference.url)
 
 
 def check_connected_internet() -> bool:
@@ -39,6 +39,7 @@ def request_login(user_id: str, password: str, url: str) -> None:
     s = requests.Session()
     s.mount('https://', TLSAdapter())
     payload = {'uid': user_id, 'pwd': password}
+    print(payload)
     try:
         response = s.post(url, data=payload, timeout=30.0)
         print(response.text)

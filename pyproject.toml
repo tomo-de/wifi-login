@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wifi-login"
-version = "0.1.0"
+version = "1.0.0"
 description = ""
 authors = ["tomo-de <71959137+tomo-de@users.noreply.github.com>"]
 readme = "README.md"

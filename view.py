@@ -1,7 +1,10 @@
+import os
+import sys
 import rumps
 import flet as ft
 import data
 import main
+from multiprocessing import Process
 
 
 def config_page(page: ft.Page):
@@ -93,6 +96,8 @@ class App(rumps.App):
     @rumps.clicked("設定")
     def config(self, _):
         ft.app(target=config_page)
+        # アプリの再起動
+        os.execl(sys.executable, sys.executable, * sys.argv)
 
     @rumps.clicked("ログイン")
     def login(self, _):

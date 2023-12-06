@@ -79,8 +79,12 @@ def config_page(page: ft.Page):
                             ft.Container(
                                 width=text_width+text_field_width,
                                 alignment=ft.alignment.center_right,
-                                content=ft.FilledButton(
-                                    text="適用", on_click=handle_click_apply_button)
+                                content=ft.ElevatedButton(
+                                    content=ft.Container(
+                                        content=ft.Text(value="適用", size=15),
+                                        padding=ft.padding.symmetric(7,12)
+                                    ),
+                                    on_click=handle_click_apply_button)
                             )
                         ],
                         alignment=ft.MainAxisAlignment.CENTER,

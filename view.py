@@ -33,6 +33,10 @@ def config_page(page: ft.Page):
         d.set_password(pwd.value)
         d.set_url(url.value)
         d.set_ssid_list(ssid_list.value)
+        # スナックバー
+        page.snack_bar = ft.SnackBar(
+            ft.Row([ft.Icon(name=ft.icons.CHECK_CIRCLE, color="#4eac55", size=20), ft.Text("設定が保存されました")]), bgcolor="#b6ebcd")
+        page.snack_bar.open = True
         page.update()
 
     page.add(
@@ -81,7 +85,7 @@ def config_page(page: ft.Page):
                                 alignment=ft.alignment.center_right,
                                 content=ft.ElevatedButton(
                                     content=ft.Container(
-                                        content=ft.Text(value="適用", size=15),
+                                        content=ft.Text(value="保存", size=15),
                                         padding=ft.padding.symmetric(7,12)
                                     ),
                                     on_click=handle_click_apply_button)

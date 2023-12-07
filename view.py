@@ -25,7 +25,7 @@ def config_page(page: ft.Page):
     url = ft.TextField(
         value=d.url, width=text_field_width, hint_text="https://example.com/")
     ssid_list = ft.TextField(
-        value=",".join(d.ssid_list), width=text_field_width, hint_text="xxx,yyy,zzz")
+        value=",".join(d.ssid_list), width=text_field_width, hint_text="Xtou_1F,Toshokan_1F,Ytou_1F_A")
 
     def handle_click_apply_button(e):
         d = data.preference()
@@ -73,7 +73,7 @@ def config_page(page: ft.Page):
                     ft.Row(
                         [
                             ft.Container(content=ft.Text(
-                                value="ssidのリスト"), width=text_width),
+                                value="wifiの表示名"), width=text_width),
                             ssid_list
                         ],
                         alignment=ft.MainAxisAlignment.CENTER,

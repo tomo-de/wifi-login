@@ -2,11 +2,8 @@ import os
 import sys
 import rumps
 import flet as ft
-import data
 import main
-from multiprocessing import Process
 import flet_page
-
 
 
 class App(rumps.App):

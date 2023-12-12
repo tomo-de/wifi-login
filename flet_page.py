@@ -1,6 +1,7 @@
 import flet as ft
 import data
 
+
 def config_page(page: ft.Page):
     # add/update controls on Page
     page.title = "設定"

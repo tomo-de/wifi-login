@@ -8,7 +8,7 @@ def config_page(page: ft.Page):
     page.title = "設定"
     page.window_width = 707
     page.window_height = 500
-    # page.window_resizable = False
+    page.window_resizable = False
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
     text_width = 100

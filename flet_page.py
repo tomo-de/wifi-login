@@ -161,6 +161,9 @@ class SsidList(ft.UserControl):
     def handle_fill_ssid_textfield(self, e):
         """ssidのテキストフィールドが記入されエンターを押されたとき,ssidリストビューとssidリストを書き換える
         """
+        #空白なら何もしない
+        if self.enter_text.value=="":
+            return
         text = SsidListItem(self.enter_text.value, self.delete_ssid_list_item)
         self.ssid_list.append(self.enter_text.value)
         self.ssid_list_view.controls.append(text)

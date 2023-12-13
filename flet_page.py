@@ -135,7 +135,7 @@ class SsidList(ft.UserControl):
 
     def build(self):
         self.enter_text = ft.TextField(
-            width=self.text_field_width, hint_text="Xtou_1F", on_submit=self.handle_fill_ssid_textfield)
+            width=self.text_field_width, hint_text="Xtou_1F",helper_text="入力後、Enterキーを押す", on_submit=self.handle_fill_ssid_textfield)
         self.ssid_list_view = ft.ListView(
             width=self.text_width+self.text_field_width, height=150, spacing=10, padding=0, auto_scroll=True)
         for i in self.ssid_list:
@@ -146,8 +146,9 @@ class SsidList(ft.UserControl):
             controls=[
                 ft.Row(
                     controls=[
-                        ft.Container(content=ft.Text(
-                            value="wifiの表示名"), width=self.text_width),
+                        ft.Container(
+                            content=ft.Text(value="ネットワーク名（SSID)"),
+                            width=self.text_width),
                         self.enter_text,
                     ],
                     alignment=ft.MainAxisAlignment.CENTER

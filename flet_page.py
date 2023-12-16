@@ -6,8 +6,8 @@ import data
 def config_page(page: ft.Page):
     # add/update controls on Page
     page.title = "設定"
-    page.window_width = 707
-    page.window_height = 500
+    page.window_width = 800
+    page.window_height = 600
     page.window_resizable = False
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
